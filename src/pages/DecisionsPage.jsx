@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../styles/common.css'; // Import common styles
 import './DecisionsPage.css'; // We'll create this for specific styles
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://dc-backend-ocfq.onrender.com/api';
 
 const DecisionsPage = () => {
   const { user, token } = useAuth();

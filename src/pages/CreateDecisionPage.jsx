@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext';
 import '../styles/common.css'; // Import common styles
 import './CreateDecisionPage.css'; // We'll create this for any specific styles
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://dc-backend-ocfq.onrender.com/api';
 
 const CreateDecisionPage = () => {
     const [title, setTitle] = useState('');

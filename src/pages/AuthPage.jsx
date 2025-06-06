@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import './AuthPage.css'; // Import the new external 
 
-const API_BASE_URL = 'http://localhost:5000/api'; // Your backend API base URL
+const API_BASE_URL = 'https://dc-backend-ocfq.onrender.com/api'; // Your backend API base URL
 
 const AuthPage = () => {
     const [username, setUsername] = useState('');

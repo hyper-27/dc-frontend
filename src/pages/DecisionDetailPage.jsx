@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext';
 import '../styles/common.css'; // Import common styles
 import './DecisionDetailPage.css'; // Specific styles for this page
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://dc-backend-ocfq.onrender.com/api';
 
 const DecisionDetailPage = () => {
     const { id } = useParams();

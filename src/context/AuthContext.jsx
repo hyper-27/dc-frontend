@@ -3,7 +3,7 @@ import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext(null);
-const API_URL = 'http://localhost:5000/api/auth/';
+const API_URL = 'https://dc-backend-ocfq.onrender.com/api/auth/';
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
