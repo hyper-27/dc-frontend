@@ -1,0 +1,108 @@
+/* src/pages/CreateDecisionPage.css */
+
+.create-decision-form-content {
+    /* No specific background/shadow needed here, container handles it */
+    padding-top: 1rem; /* Add some top padding to separate from title */
+}
+
+.form-section {
+    background-color: #292945;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-bottom: 2rem;
+}
+
+.form-section h2 {
+    font-size: 1.6rem;
+    color: #b6fbff;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(182, 251, 255, 0.2);
+    padding-bottom: 0.8rem;
+}
+
+.form-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space between input field and button */
+    margin-bottom: 1rem;
+}
+
+.form-group-inline .input-field {
+    flex-grow: 1; /* Allow input field to take available space */
+    margin-bottom: 0; /* Override default form-group margin */
+}
+
+.add-button,
+.remove-button {
+    /* Base styles for these buttons */
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.add-button {
+    background: linear-gradient(90deg, #27ae60, #2ecc71); /* Green gradient */
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.5);
+    margin-top: 1rem; /* Space from last input */
+    display: block; /* Make it take full width */
+    width: auto; /* Override default button width */
+    padding: 0.75rem 1.25rem; /* Slightly larger padding */
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-button:hover {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.7);
+}
+
+.remove-button {
+    background: #e74c3c; /* Red color */
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+    min-width: 40px; /* Ensure it's not too small */
+    text-align: center;
+    padding: 0.6rem 0.8rem; /* Adjusted padding for smaller button */
+}
+
+.remove-button:hover {
+    background: #c0392b;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+}
+
+.submit-button {
+    /* This will inherit from common.css button, but we can override if needed */
+    margin-top: 2rem; /* Add more space before the final submit button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 1rem 1.5rem;
+    }
+    .form-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .form-group-inline {
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    .add-button,
+    .remove-button {
+        width: 100%; /* Full width when stacked */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

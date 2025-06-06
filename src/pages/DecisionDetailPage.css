@@ -1,0 +1,182 @@
+/* src/pages/DecisionDetailPage.css */
+
+.decision-detail-container {
+    padding: 2.5rem; /* Slightly more padding for detail view */
+}
+
+.decision-detail-title {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    background: linear-gradient(45deg, #b6fbff, #83a4d4); /* Reversed gradient for title emphasis */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.decision-detail-description {
+    text-align: center;
+    color: #d2dff4;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.detail-section {
+    background-color: #292945;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-bottom: 2rem;
+}
+
+.detail-section h2 {
+    font-size: 1.8rem;
+    color: #7de2f1; /* Accent color */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(125, 226, 241, 0.2);
+    padding-bottom: 0.8rem;
+}
+
+.detail-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c3c66;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    box-shadow: inset 0 0 10px #1b1b32;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #d2dff4;
+}
+
+.item-text {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.item-score,
+.item-weight {
+    background: #7de2f1;
+    color: #1f1f2e;
+    padding: 0.35rem 0.8rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(125,226,241,0.7);
+}
+
+.item-weight {
+    background: linear-gradient(90deg, #83a4d4, #4ea1f7); /* Different gradient for weight */
+    box-shadow: 0 2px 8px rgba(78,161,247,0.7);
+    min-width: 80px;
+}
+
+.no-data-text {
+    text-align: center;
+    color: #9bb7c4;
+    font-style: italic;
+    padding: 1rem;
+    background-color: #2a2a43;
+    border-radius: 8px;
+}
+
+.decision-detail-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.edit-detail-button,
+.back-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.edit-detail-button {
+    background: linear-gradient(90deg, #4ea1f7, #7de2f1);
+    color: #1f1f2e;
+    box-shadow: 0 5px 15px rgba(78,161,247,0.7);
+}
+
+.edit-detail-button:hover {
+    background: linear-gradient(90deg, #7de2f1, #4ea1f7);
+    box-shadow: 0 8px 20px rgba(78,161,247,0.9);
+    transform: translateY(-2px);
+}
+
+.back-button {
+    background: #2a2a43;
+    color: #d2dff4;
+    border: 1px solid rgba(210, 223, 244, 0.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.back-button:hover {
+    background-color: #3c3c66;
+    border-color: rgba(210, 223, 244, 0.4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+
+.score-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #b6fbff;
+    margin-bottom: 1rem;
+}
+
+.result-section.final-score-display {
+    margin-bottom: 2rem; /* Ensure space before footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .decision-detail-container {
+        padding: 1.5rem;
+    }
+    .decision-detail-title {
+        font-size: 2rem;
+    }
+    .detail-section {
+        padding: 1rem 1.5rem;
+    }
+    .detail-section h2 {
+        font-size: 1.5rem;
+    }
+    .detail-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+    }
+    .item-score,
+    .item-weight {
+        width: 100%;
+        text-align: left;
+        padding: 0.25rem 0.5rem;
+    }
+    .decision-detail-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .edit-detail-button,
+    .back-button {
+        width: 100%;
+    }
+}

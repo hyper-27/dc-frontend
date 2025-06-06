@@ -1,0 +1,251 @@
+/* src/styles/common.css */
+
+/* Global App Container for Main Content */
+.app-main-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%; /* Ensure it takes full width within the body's flex context */
+}
+
+/* Styles for the loading screen */
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(31, 31, 46, 0.9);
+    color: #d2dff4;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease forwards; /* Added animation for smoother appearance */
+}
+
+/* Main content container on pages */
+.container {
+    background: #1f1f2e;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    max-width: 800px; /* Increased width */
+    width: 100%;
+    padding: 2rem 2.5rem;
+    min-height: 70vh; /* Ensures it's tall enough */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes content vertically */
+}
+
+/* Page Title (H1) */
+h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    background: linear-gradient(45deg, #83a4d4, #b6fbff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Page Subtitle (P with class subtitle) */
+p.subtitle {
+    text-align: center;
+    color: #9bb7c4;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+/* Common Label Style for Forms */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #d2dff4; /* Added color for labels */
+}
+
+/* General Form Input Field Style (for text, email, password, etc.) */
+.input-field {
+    width: 100%;
+    padding: 0.9rem 1.1rem; /* Increased padding for larger area */
+    font-size: 1.05rem; /* Slightly increased font size */
+    font-family: 'Poppins', sans-serif;
+    background-color: #2a2a43;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    transition: background-color 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: #3c3c66;
+}
+
+/* General Textarea Style (for multi-line text input) */
+textarea {
+    width: 100%;
+    resize: vertical; /* Allows vertical resizing by user */
+    border-radius: 10px;
+    border: none;
+    padding: 0.9rem 1.1rem; /* Increased padding - match input-field */
+    font-size: 1.05rem; /* Increased font size - match input-field */
+    font-family: 'Poppins', sans-serif;
+    background-color: #2a2a43;
+    color: #e0e0e0;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    transition: background-color 0.3s ease;
+    min-height: 120px; /* Increased minimum height for textareas */
+}
+
+textarea:focus {
+    outline: none;
+    background-color: #3c3c66;
+}
+
+/* General Form Group (for input and label spacing) */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* General Button Style */
+button {
+    margin-top: 1rem; /* Adjust this if a specific button needs different top margin */
+    width: 100%; /* Default to full width for general buttons */
+    padding: 0.85rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f1f2e;
+    background: linear-gradient(90deg, #7de2f1, #4ea1f7);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(78,161,247,0.7);
+    transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+button:hover {
+    background: linear-gradient(90deg, #4ea1f7, #7de2f1);
+    box-shadow: 0 8px 20px rgba(78,161,247,0.9);
+}
+button:active {
+    transform: scale(0.98);
+}
+
+/* Error Message Style */
+.error-message {
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Success Message Style */
+.success-message {
+    color: #27ae60;
+    background-color: rgba(39, 174, 96, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Section for displaying results (e.g., calculation results) */
+.result-section {
+    margin-top: 2rem;
+    background-color: #292945;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Style for the main calculated score display (circular) */
+.score {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f1f2e; /* Text color contrasts with background */
+    letter-spacing: 0.02em;
+
+    /* Circular shape */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    /* Center content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Background and shadow */
+    background: linear-gradient(135deg, #7de2f1, #4ea1f7);
+    box-shadow: 0 8px 24px rgba(78,161,247,0.8);
+
+    /* Positioning */
+    margin: 1.5rem auto 1rem auto; /* Center horizontally */
+}
+
+/* Container for a list of outcomes (e.g., options with scores) */
+.outcomes {
+    margin-top: 1rem;
+}
+
+/* Individual item within an outcomes list */
+.outcome-item {
+    background: #3c3c66;
+    margin-bottom: 0.9rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px #1b1b32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #d2dff4;
+}
+
+/* Style for the score displayed next to an outcome item */
+.outcome-score {
+    background: #7de2f1;
+    color: #1f1f2e;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    min-width: 42px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(125,226,241,0.7);
+}
+
+/* Footer style */
+.footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(12px);}
+    to {opacity: 1; transform: translateY(0);}
+}

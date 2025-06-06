@@ -1,0 +1,76 @@
+/* Ratings Table */
+.ratings-table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+
+.ratings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ratings-table th,
+.ratings-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping in headers/cells */
+}
+
+.ratings-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.ratings-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ratings-table td:first-child {
+    text-align: left; /* Align option names to the left */
+    font-weight: 500;
+}
+
+.rating-input {
+    width: 60px; /* Adjust as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Info message style */
+.info-message {
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 10px 15px;
+    border-left: 5px solid #00bcd4;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+/* Save Ratings Button */
+.save-ratings-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Space it out from other buttons */
+}
+
+.save-ratings-button:hover {
+    background-color: #45a049;
+}
+
+/* Adjustments to existing edit-actions layout if needed */
+.edit-actions {
+    display: flex; /* Make buttons align horizontally */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}

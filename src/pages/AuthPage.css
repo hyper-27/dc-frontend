@@ -1,0 +1,243 @@
+/* src/styles/AuthPage.css */
+
+.auth-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 64px); /* Adjusted height to account for navbar */
+    padding: 2.5rem 7rem; /* Consistent padding */
+    background:  #1f1f2e; 
+    border-radius: 50px;
+}
+
+.auth-card {
+    background-color: #292945; /* Exactly matching create-decision-form background */
+    padding: 3rem 5rem;
+    border-radius: 50px; /* Matching border-radius */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5); /* Matching shadow style */
+    width: 100%;
+    max-width: 800px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Matching transition duration */
+    border: none; /* No explicit border, relying on shadow for definition */
+}
+
+.auth-card:hover {
+    transform: translateY(-5px); /* Matching hover transform */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6); /* Matching hover shadow */
+}
+
+.auth-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #e0e0e0; /* Matching form-title color from DecisionsPage.css */
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2); /* Adjusted border color to match form-title */
+    letter-spacing: 0.05em;
+}
+
+.auth-message {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-width: 1px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInDown 0.5s ease-out forwards;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.error-message {
+    background-color: rgba(231, 76, 60, 0.2); /* Semi-transparent red */
+    color: #e74c3c; /* Red text */
+    border-color: #e74c3c;
+}
+
+.success-message {
+    background-color: rgba(39, 174, 96, 0.2); /* Semi-transparent green */
+    color: #2ecc71; /* Green text */
+    border-color: #2ecc71;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+
+.form-label {
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+    color: #d2dff4; /* Matching general text color from decision-card-description */
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(182, 251, 255, 0.3); /* Accent-driven border */
+    border-radius: 8px;
+    background-color: #292945; /* **Input background matches card background** */
+    color: #b6fbff; /* **Input text color uses light accent** */
+    font-size: 1.1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.7);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(182, 251, 255, 0.6);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #7de2f1; /* Focus border matches decision-card-title-link accent */
+    box-shadow: 0 0 0 3px rgba(125, 226, 241, 0.4), inset 0 1px 5px rgba(0, 0, 0, 0.9); /* Accent glow */
+}
+
+.auth-submit-button {
+    width: 100%;
+    padding: 1rem 1.8rem;
+    border: none;
+    border-radius: 10px; /* Matching action button border-radius */
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1f1f2e; /* Dark text for light gradient buttons */
+    background: linear-gradient(90deg, #4ea1f7, #7de2f1); /* **Blue gradient matching edit-button** */
+    box-shadow: 0 4px 15px rgba(78,161,247,0.5); /* Matching shadow for blue gradient */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; /* Using 'background' for gradient transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.auth-submit-button:hover:not(:disabled) {
+    background: linear-gradient(90deg, #7de2f1, #4ea1f7); /* Matching hover gradient */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78,161,247,0.7); /* Matching hover shadow */
+}
+
+.auth-submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(125, 226, 241, 0.6); /* Focus ring from accent color */
+}
+
+.auth-submit-button:disabled {
+    background: #555;
+    color: #bbb;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Spinner Styles */
+.spinner {
+    border: 3px solid rgba(31, 31, 46, 0.3); /* Darker border for contrast */
+    border-top: 3px solid #1f1f2e; /* Spinner top matches the darkest background */
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.auth-toggle-section {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.auth-toggle-button {
+    color: #7de2f1; /* Matching decision-card-title-link accent color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px; /* Matching button border-radius */
+    transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; /* Shorter transitions */
+}
+
+.auth-toggle-button:hover {
+    color: #b6fbff; /* Lighter accent on hover */
+    background-color: rgba(125, 226, 241, 0.1); /* Subtle background on hover from accent */
+    box-shadow: 0 0 10px rgba(125, 226, 241, 0.3); /* Soft glow from accent */
+}
+
+.auth-toggle-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(125, 226, 241, 0.5); /* Focus ring from accent */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .auth-card {
+        max-width: 700px;
+        padding: 3rem 3.5rem;
+    }
+    .auth-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 2.5rem 2.5rem;
+        max-width: 90%;
+    }
+    .auth-heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    .auth-submit-button {
+        font-size: 1.2em;
+        padding: 0.9rem 1.5rem;
+    }
+    .auth-page-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 2rem 1.5rem;
+    }
+    .auth-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .form-input {
+        padding: 0.8rem 1rem;
+        font-size: 1em;
+    }
+    .auth-submit-button {
+        font-size: 1.1em;
+        padding: 0.8rem 1.2rem;
+    }
+    .auth-toggle-button {
+        font-size: 0.95em;
+        padding: 0.4rem 0.8rem;
+    }
+}

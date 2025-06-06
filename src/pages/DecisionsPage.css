@@ -1,0 +1,163 @@
+/* src/pages/DecisionsPage.css */
+
+.create-decision-form {
+    background-color: #292945;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    max-width: 600px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-input-group {
+    display: flex;
+    gap: 0.5rem; /* Space between input and button */
+}
+
+/* input-field and button are already defined in common.css */
+
+.decisions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Space between cards */
+    max-width: 1000px; /* Max width for the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.decision-card {
+    background-color: #3c3c66;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.decision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.decision-card-title-link {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #7de2f1; /* Accent color */
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block; /* Make it a block element to take full width */
+    transition: color 0.2s ease;
+}
+
+.decision-card-title-link:hover {
+    color: #b6fbff; /* Lighter accent on hover */
+}
+
+.decision-card-description {
+    color: #d2dff4;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows description to take up space */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit description to 3 lines */
+    line-clamp: 3; /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.decision-card-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 0.75rem; /* Space between action buttons */
+    margin-top: 1rem;
+}
+
+.edit-button,
+.delete-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* For the Link element */
+    display: inline-block; /* For the Link element */
+    text-align: center;
+}
+
+.edit-button {
+    background: linear-gradient(90deg, #4ea1f7, #7de2f1); /* Blue gradient */
+    color: #1f1f2e;
+    box-shadow: 0 3px 10px rgba(78,161,247,0.5);
+}
+
+.edit-button:hover {
+    background: linear-gradient(90deg, #7de2f1, #4ea1f7);
+    box-shadow: 0 5px 15px rgba(78,161,247,0.7);
+}
+
+.delete-button {
+    background: linear-gradient(90deg, #e74c3c, #c0392b); /* Red gradient */
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.5);
+}
+
+.delete-button:hover {
+    background: linear-gradient(90deg, #c0392b, #e74c3c);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.7);
+}
+
+.no-decisions-message {
+    text-align: center;
+    color: #9bb7c4;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #2a2a43;
+    border-radius: 12px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .create-decision-form {
+        padding: 1rem 1.5rem;
+    }
+    .form-title {
+        font-size: 1.5rem;
+    }
+    .decisions-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .decision-card {
+        padding: 1.2rem;
+    }
+    .decision-card-title-link {
+        font-size: 1.2rem;
+    }
+    .decision-card-description {
+        font-size: 0.9rem;
+    }
+    .edit-button,
+    .delete-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,115 @@
+/* src/components/Navbar.css */
+
+.navbar-container {
+    background: rgba(31, 31, 46, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid rgba(78, 161, 247, 0.2);
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: linear-gradient(45deg, #83a4d4, #b6fbff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.02);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center; /* Keep this here for aligning the group */
+}
+
+.navbar-link,
+.navbar-button {
+    color: #d2dff4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+
+    /* --- THE KEY FIXES --- */
+    display: inline-flex; /* Treat all as flexible boxes */
+    align-items: center; /* Vertically center content inside each link/button/span */
+    justify-content: center; /* Horizontally center content if needed, good practice for buttons */
+    /* Ensure no extra margin/padding from user agent styles */
+    margin: 0;
+    box-sizing: border-box; /* Standardize box model */
+    /* Remove any default line-height if it causes issues and rely on padding */
+    line-height: normal;
+    /* --- END KEY FIXES --- */
+}
+
+/* Add a specific rule for the username span to ensure it picks up `navbar-link` styles correctly */
+
+
+
+.navbar-link:hover,
+.navbar-button:hover {
+    background-color: rgba(125, 226, 241, 0.1);
+    color: #7de2f1;
+    transform: translateY(-2px);
+}
+
+/* Specific styling for the active link, if react-router adds an active class */
+.navbar-link.active {
+    border-bottom: 2px solid #4ea1f7;
+    color: #4ea1f7;
+}
+
+/* Logout button specific styling */
+.navbar-button {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+}
+
+.navbar-button:hover {
+    background: linear-gradient(90deg, #c0392b, #e74c3c);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.6);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar-logo {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .navbar-link,
+    .navbar-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
