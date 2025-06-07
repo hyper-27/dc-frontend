@@ -1,4 +1,4 @@
-# dc-frontend
+# Decision Compass
 
 A frontend project built primarily with JavaScript, React, and CSS, designed to provide a user-friendly interface for decision-making workflows.
 
